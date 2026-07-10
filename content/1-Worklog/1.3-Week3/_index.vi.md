@@ -1,59 +1,26 @@
 ---
 title: "Worklog Tuần 3"
-date: 2024-01-01
+date: 2026-05-11
 weight: 1
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-
 ### Mục tiêu tuần 3:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai hệ thống lưu trữ chia sẻ (NFS) trên Cloud với Amazon EFS.
+* Kiểm tra hiệu năng hệ thống bằng các công cụ đo đạc thực tế.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| :--- | :--- | :--- | :--- | :--- |
+| 2 | - Tìm hiểu kiến trúc EFS:<br>&emsp; + Mount targets & Security Groups.<br>&emsp; + Performance Modes (General, Max I/O). | 25/05/2026 | 25/05/2026 | Tài liệu Amazon EFS |
+| 3 | - **Thực hành EFS:**<br>&emsp; + Tạo Amazon EFS File System.<br>&emsp; + Cấu hình Mount Targets cho các VPC Subnets. | 26/05/2026 | 26/05/2026 | Hướng dẫn Mount Targets & VPC cho EFS |
+| 4 | - **Kết nối NFS:**<br>&emsp; + Mount EFS vào nhiều EC2 instance.<br>&emsp; + Cấu hình `/etc/fstab` để tự động mount khi boot. | 27/05/2026 | 27/05/2026 | Hướng dẫn mount EFS trên EC2 / fstab |
+| 5 | - Công cụ Stress-test:<br>&emsp; + Tìm hiểu lệnh `dd` để tạo file kiểm tra I/O.<br>&emsp; + Đánh giá thông số đọc/ghi thực tế trên EFS. | 28/05/2026 | 28/05/2026 | Tài liệu benchmark I/O với lệnh dd |
+| 6 | - **Báo cáo hiệu năng:**<br>&emsp; + Thực hiện test đọc/ghi 1GiB dữ liệu.<br>&emsp; + Lưu log kết quả và tối ưu hóa thiết lập. | 29/05/2026 | 29/05/2026 | Tài liệu Performance Modes của EFS |
 
 ### Kết quả đạt được tuần 3:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+* Thiết lập thành công hệ thống lưu trữ chia sẻ EFS giữa nhiều máy chủ EC2.
+* Hiểu cách cấu hình NFS mount tự động trên Linux.
+* Nắm vững kỹ thuật kiểm tra hiệu năng (benchmark) lưu trữ bằng công cụ `dd`.
 

@@ -1,125 +1,98 @@
 ---
 title: "Event 2"
 date: 2024-01-01
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+
+# Bài thu hoạch “THE HIDDEN ICEBERG OF A PROJECT: DEVOPS BEFORE DISASTER”
 
 ### Mục Đích Của Sự Kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- Nhận diện những rủi ro ngầm (phần chìm của tảng băng) trong vòng đời phát triển phần mềm.
+- Giới thiệu các phương pháp và văn hóa DevOps thực chiến để phòng ngừa thảm họa dự án.
+- Hướng dẫn xây dựng tư duy tự động hóa (CI/CD, IaC) và giám sát hệ thống chủ động.
+- Gắn kết khoảng cách giữa đội ngũ Development (Phát triển) và Operations (Vận hành).
 
 ### Danh Sách Diễn Giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- **[Tên Diễn Giả ]** -Trần Minh Quân  
+
 
 ### Nội Dung Nổi Bật
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### Thuyết "Tảng Băng Trôi" (The Iceberg Metaphor) trong dự án
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+- **Bề nổi (Phần nhìn thấy):** Giao diện (UI), tính năng mới, tốc độ release.
+- **Phần chìm (Rủi ro tiềm ẩn):** Nợ kỹ thuật (Technical debt), lỗ hổng bảo mật, quy trình deploy thủ công, thiếu cơ chế giám sát, thiếu tài liệu hệ thống.
+- **Hậu quả:** Sập hệ thống lúc cao điểm, mất dữ liệu, tốn thời gian fix bug (chữa cháy) thay vì phát triển tính năng mới.
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+#### Chuyển đổi tư duy: Từ "Chữa cháy" sang "Phòng ngừa" với DevOps
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+Giải quyết bài toán phần chìm bằng các trụ cột cốt lõi của DevOps:
+- **Continuous Integration (CI):** Tích hợp liên tục, phát hiện lỗi sớm (shift-left testing) ngay từ khâu viết code.
+- **Continuous Deployment/Delivery (CD):** Tự động hóa luồng đưa sản phẩm lên môi trường thực tế, đảm bảo an toàn và khả năng rollback nhanh chóng.
+- **Infrastructure as Code (IaC):** Quản lý và cấp phát hạ tầng bằng code, loại bỏ sai sót do con người thao tác thủ công.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+#### Quản lý rủi ro và Giám sát chủ động (Observability)
 
-#### Domain-Driven Design (DDD)
+- **Sự khác biệt giữa Monitoring và Observability:** Không chỉ xem hệ thống sống hay chết, mà phải hiểu *tại sao* nó gặp vấn đề.
+- **3 Trụ cột của Observability:** Logs, Metrics, và Traces.
+- **Thiết lập cảnh báo (Alerting):** Phát hiện sự cố và gửi thông báo trước khi người dùng kịp nhận ra và phàn nàn.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+#### Phá vỡ bức tường Silo (Culture & Collaboration)
 
-#### Event-Driven Architecture
-
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
-
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+- DevOps không phải là một chức danh hay một tool, mà là **văn hóa**.
+- Trách nhiệm chia sẻ (Shared Responsibility): Dev cũng cần quan tâm đến cách code chạy trên server, và Ops cũng cần hiểu luồng hoạt động của code.
 
 ### Những Gì Học Được
 
-#### Tư Duy Thiết Kế
+#### Tư Duy Thiết Kế & Vận Hành
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+- **Proactive thay vì Reactive:** Luôn chuẩn bị cho tình huống xấu nhất (Disaster Recovery).
+- **Automation-first:** Bất cứ công việc nào lặp lại quá 2 lần đều cần được tự động hóa.
+- **Immutable Infrastructure:** Tư duy hạ tầng bất biến – thay vì sửa trực tiếp trên server (SSH vào sửa cấu hình), hãy cập nhật code IaC và deploy lại server mới.
 
 #### Kiến Trúc Kỹ Thuật
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+- **CI/CD Pipelines:** Hiểu rõ các bước để xây dựng một luồng ống chuẩn từ Source Code → Build → Test → Deploy.
+- Tầm quan trọng của việc **phân tách môi trường** rõ ràng (Dev, Staging, Production) để cô lập rủi ro.
+- Hiểu cách các công cụ quản lý cấu hình và hạ tầng hoạt động để đảm bảo tính nhất quán giữa các môi trường.
 
-#### Chiến Lược Hiện Đại Hóa
+#### Chiến Lược Áp Dụng
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+- **Bắt đầu từ quy mô nhỏ:** Không cần áp dụng DevOps toàn diện ngay lập tức. Hãy bắt đầu từ việc tự động hóa khâu test, sau đó đến build, rồi mới đến deploy.
+- Xây dựng **Post-mortem culture**: Khi thảm họa xảy ra, tập trung tìm nguyên nhân gốc rễ (Root Cause) thay vì đổ lỗi (Blameless culture).
 
-### Ứng Dụng Vào Công Việc
+### Ứng Dụng Vào Định Hướng Công Việc
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+- **Xây dựng CI/CD:** Áp dụng thiết lập pipeline tự động hóa cho các dự án Fullstack cá nhân để chuẩn bị hành trang trở thành kỹ sư Fullstack thực thụ, hiểu rõ vòng đời sản phẩm từ code đến deploy.
+- **Áp dụng IaC vào AWS:** Thay vì tạo VPC, EC2 hay cấu hình mạng thủ công trên AWS Console, sẽ chuyển sang viết kịch bản tự động bằng CloudFormation hoặc Terraform.
+- **Tối ưu hệ thống giám sát:** Tích hợp các hệ thống như Nagios hoặc AWS CloudWatch cho các máy chủ Linux (đặc biệt là CentOS) để theo dõi metrics mạng lưới và có cảnh báo sớm trước khi thảm họa xảy ra.
+- **Quản trị hệ thống chuyên nghiệp:** Hạn chế thói quen SSH trực tiếp vào server để sửa lỗi nóng, thay vào đó sẽ quản lý cấu hình tập trung qua Git.
 
 ### Trải nghiệm trong event
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+Tham gia sự kiện **“THE HIDDEN ICEBERG OF A PROJECT: DEVOPS BEFORE DISASTER”** là một trải nghiệm thực tế và thức tỉnh, giúp tôi nhìn nhận lại cách vận hành các dự án công nghệ. Một số trải nghiệm nổi bật:
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+#### Bài học từ những "Thảm họa" thực tế
+- Các diễn giả đã mổ xẻ những case study thực tế về các dự án bị sập hệ thống do coi thường "phần chìm của tảng băng". Điều này giúp tôi nhận ra hậu quả khôn lường của việc làm thủ công và thiếu quy trình kiểm thử hệ thống.
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+#### Tiếp cận kỹ thuật thực chiến
+- Được giới thiệu luồng hoạt động thực tế của CI/CD pipeline và cách các kỹ sư DevOps tự động hóa hạ tầng. 
+- Hiểu rõ hơn về tầm quan trọng của việc xây dựng hệ thống giám sát chủ động (observability) để "nhìn thấu" phần chìm của dự án, thay vì chỉ cấu hình server chạy là xong.
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+#### Tư duy văn hóa đội nhóm
+- Nhận ra rằng rào cản lớn nhất của các dự án không nằm ở công nghệ mà ở sự thiếu giao tiếp giữa team Dev và team Ops. Workshop nhấn mạnh văn hóa chia sẻ trách nhiệm, một mindset cực kỳ quan trọng cho định hướng kỹ sư hệ thống/Fullstack sau này.
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+#### Kết luận rút ra
+- Áp dụng văn hóa DevOps sớm sẽ giúp kiểm soát rủi ro, giảm thiểu downtime và tránh tình trạng "cháy nhà mới ra mặt chuột". 
+- Tự động hóa và giám sát hệ thống mạng/máy chủ ngay từ đầu là khoản đầu tư sinh lời nhất về mặt thời gian và sự ổn định của bất kỳ dự án nào.
 
 #### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+*  (/images/event.jpg)
+  (/images/enven2.jpg)
+> 

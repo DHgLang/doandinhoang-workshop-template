@@ -1,115 +1,91 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: 2026-05-11
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
-
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
-
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+# Movie Ticket Booking Platform
+## AWS Serverless Solution for Real-time Booking Systems
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+The **Movie Ticket Booking Platform** handles concurrent ticket sales during peak showtimes. It uses an **event-driven serverless** stack on AWS (Amplify Gen 2, API Gateway, Lambda, DynamoDB, SQS), with Cognito, Amplify Hosting, WAF, and VNPay sandbox for availability, scale, and a smooth booking experience.
 
 ### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
-
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
-
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+* **Current Challenges:** Traditional booking systems bottleneck under traffic spikes — race conditions (double-booking), high latency, or outages at peak hours.
+* **Proposed Solution:** API Gateway + Lambda for sync logic (seat lock, create booking); DynamoDB with TTL for seat state; SQS + worker Lambda for async orders; Cognito for identity; VNPay sandbox for payment.
+* **Benefits (ROI):** Pay-as-you-go, auto-scale with demand, lower fixed server cost; higher successful booking rate.
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+Flow: browse movies → select showtime → lock seats → booking → (optional) VNPay → e-ticket.
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+![Movie Ticket Booking Platform Architecture](/images/2-Proposal/architecture.png)
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+**AWS Services Used:**
+* **Amazon Cognito:** Sign-up / sign-in; `admin` group for the admin panel.
+* **Amazon API Gateway (HTTP API):** REST entry (`/health`, `/{proxy+}` → Lambda).
+* **AWS Lambda:** `booking-api` (sync) and `booking-worker` (queue consumer).
+* **Amazon DynamoDB:** Movies, showtimes, seats, bookings, tickets; seat locks via TTL.
+* **Amazon SQS + DLQ:** Order queue; failed messages go to the Dead Letter Queue.
+* **Amazon S3:** Movie posters / backend static assets.
+* **AWS Amplify Hosting + CloudFront:** React frontend deploy and CDN.
+* **AWS WAF:** Edge protection on CloudFront (managed rules).
+* **CloudWatch RUM:** Browser performance and error monitoring.
+* **VNPay sandbox:** Trial payment gateway (via Lambda).
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
-
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+**Component Design:**
+* **Frontend:** React (Vite) — customer UI + Admin Panel.
+* **Auth:** Cognito JWT; admin RBAC via Cognito Groups.
+* **API & Compute:** HTTP API → booking-api Lambda; worker consumes SQS.
+* **Data:** DynamoDB (BookingStore single-table + Amplify Data models).
+* **Edge:** Amplify Hosting / CloudFront + WAF.
+* **Observability:** CloudWatch Logs, Metrics, RUM (Admin Traffic).
 
 ### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
+* **Phases:**
+    1. Amplify Gen 2 architecture and data model (movies, showtimes, seats, bookings).
+    2. Business APIs (auth, movies, lock seats, booking, VNPay).
+    3. DynamoDB TTL + SQS/DLQ + worker Lambda.
+    4. Amplify Hosting deploy, enable WAF; E2E tests on the live URL.
+* **Requirements:**
+    * Infrastructure as code via Amplify Gen 2 / CDK (`amplify/backend.ts`).
+    * SQS DLQ for failed orders.
+    * Do not commit `.env` / `amplify_outputs.json` to a public Git repo.
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
-
-### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+### 5. Implementation Roadmap
+* **Month 1:** Requirements, architecture, Cognito + React shell.
+* **Month 2:** Lambda / DynamoDB / SQS; seat lock and booking.
+* **Month 3:** VNPay, Admin, RUM; Amplify Hosting + WAF.
+* **Month 4:** UAT, Hugo workshop report, Mentor demo.
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+Estimated monthly cost for lab / sandbox and low-traffic demo (Free Tier may apply):
 
-Total: $0.7/month, $8.40/12 months
+| AWS Service | Purpose | Estimated (USD/Month) |
+| :--- | :--- | :--- |
+| **Amazon Cognito** | Auth | ~0 (Free Tier) |
+| **API Gateway** | HTTP API | ~1.00 |
+| **AWS Lambda** | booking-api + booking-worker | ~1.00 |
+| **Amazon DynamoDB** | Booking data (on-demand) | ~2.00 – 5.00 |
+| **Amazon SQS** | Queue + DLQ | ~0.50 |
+| **Amazon S3** | Posters / assets | ~1.00 |
+| **Amplify Hosting / CloudFront** | Frontend + CDN | ~1.00 – 5.00 |
+| **AWS WAF** | Web ACL (CloudFront) | per rules / requests |
+| **CloudWatch RUM** | Frontend monitoring | ~1.00 – 3.00 |
+| **TOTAL (estimate)** | | **~10 – 25 USD/Month** (lower in lab with Free Tier) |
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+**Notes:**
+* Amplify sandbox is pay-as-you-go — clean up when demos are done.
+* No RDS / ElastiCache — avoids fixed instance cost vs classic stacks.
 
 ### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
-
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
-
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+* **API overload:** Mitigated by SQS order buffering.
+* **Double-booking:** DynamoDB seat lock with TTL; worker confirms booking.
+* **Payment / worker failures:** DLQ isolation; `/health` and CloudWatch Logs.
+* **Web attacks:** WAF on CloudFront + HTTPS + Cognito.
 
 ### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+* **Performance:** Stable end-to-end booking on sandbox and live URL.
+* **Reliability:** No double-book in lock → booking → worker flow.
+* **Scalability:** Serverless scales with load; cost follows usage.

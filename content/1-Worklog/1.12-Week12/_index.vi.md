@@ -1,58 +1,32 @@
 ---
 title: "Worklog Tuần 12"
-date: 2024-01-01
-weight: 2
+date: 2026-05-11
+weight: 12
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 ### Mục tiêu tuần 12:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hoàn thiện báo cáo thực tập Hugo (Workshop 5.1–5.6), tài liệu kỹ thuật và slide thuyết trình.
+* Tổng kết kiến trúc **Movie Ticket Booking Platform**; chuẩn bị demo live và dọn dẹp sandbox.
+* Kiểm tra chi phí trên AWS Billing; hoàn thiện tài liệu song ngữ trước khi kết thúc kỳ thực tập.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Cập nhật Hugo Workshop: tổng quan kiến trúc, Prerequisite, Backend sandbox<br>- Chụp / gắn ảnh Console (Cognito, API Gateway, DynamoDB, SQS, Lambda) | 27/07/2026 | 28/07/2026 | Hugo template + AWS Console |
+| 3 | - Hoàn thiện mục Frontend & Hosting, Demo luồng khách hàng / Admin<br>- Gắn ảnh live app, VNPay, RUM, WAF | 29/07/2026 | 30/07/2026 | App live + Amplify Console |
+| 4 | - Viết mục Dọn dẹp (sandbox delete) và Tổng quan & chi phí (Billing)<br>- Cập nhật Worklog tuần 8–12, Proposal cho khớp stack DynamoDB / Amplify | 31/07/2026 | 03/08/2026 | AWS Billing + báo cáo Hugo |
+| 5 | - Soạn slide thuyết trình tổng kết kiến trúc và demo<br>- Rà soát Event / Self-Assessment / Feedback | 04/08/2026 | 07/08/2026 | Tài liệu cá nhân |
+| 6 | - Demo với Mentor; bảo vệ báo cáo<br>- Chạy `npx ampx sandbox delete`; xác nhận CloudFormation / DynamoDB<br>- Kiểm tra AWS Billing; kết thúc kỳ thực tập | 10/08/2026 | 11/08/2026 | Cleanup checklist |
 
 ### Kết quả đạt được tuần 12:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thiện báo cáo Hugo song ngữ: Workshop 5.1–5.6 (Prerequisite → Backend → Frontend → Demo → Cleanup → Cost).
+* Tổng hợp kiến trúc end-to-end: Amplify Gen 2, Cognito, API Gateway, Lambda, DynamoDB, SQS, VNPay, Amplify Hosting, WAF, CloudWatch RUM.
+* Chuẩn bị demo live luồng đặt vé (chọn ghế → thanh toán → e-ticket) và bảng Admin.
+* Thực hiện dọn dẹp Amplify sandbox; xác nhận stack sandbox đã xóa, DynamoDB Tables (0), giữ CDKToolkit.
+* Đối chiếu chi phí trên AWS Billing (free plan / credits); ghi nhận trong mục Tổng quan & chi phí.
+* Hoàn thiện Worklog, Proposal, Events, Self-Assessment và tài liệu thuyết trình cuối kỳ.

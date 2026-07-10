@@ -1,126 +1,100 @@
 ---
 title: "Event 2"
 date: 2024-01-01
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+
+
+# Reflection Report: “THE HIDDEN ICEBERG OF A PROJECT: DEVOPS BEFORE DISASTER”
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Identify hidden risks (the submerged part of the iceberg) in the software development lifecycle.
+- Introduce practical DevOps methodologies and culture to prevent project disasters.
+- Guide the building of an automation mindset (CI/CD, IaC) and proactive system monitoring.
+- Bridge the gap between the Development and Operations teams.
 
-### Speakers
+### Speaker List
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **[Speaker Name]** - Tran Minh Quan
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### The Iceberg Metaphor in Projects
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+- **The Tip (Visible part):** User Interface (UI), new features, release speed.
+- **The Submerged Part (Hidden risks):** Technical debt, security vulnerabilities, manual deployment processes, lack of monitoring mechanisms, missing system documentation.
+- **Consequences:** System crashes during peak hours, data loss, wasting time fixing bugs (firefighting) instead of developing new features.
 
-#### Transitioning to modern application architecture – Microservices
+#### Mindset Shift: From "Firefighting" to "Prevention" with DevOps
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+Solving the submerged issues using the core pillars of DevOps:
+- **Continuous Integration (CI):** Continuous integration, detecting bugs early (shift-left testing) right from the coding phase.
+- **Continuous Deployment/Delivery (CD):** Automating the pipeline to deploy products to the production environment, ensuring safety and fast rollback capabilities.
+- **Infrastructure as Code (IaC):** Managing and provisioning infrastructure through code, eliminating human errors from manual operations.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+#### Risk Management and Proactive Monitoring (Observability)
 
-#### Domain-Driven Design (DDD)
+- **The Difference between Monitoring and Observability:** Not just seeing if the system is alive or dead, but understanding *why* it has issues.
+- **The 3 Pillars of Observability:** Logs, Metrics, and Traces.
+- **Alerting:** Detecting incidents and sending notifications before users even notice and complain.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+#### Breaking Down Silos (Culture & Collaboration)
 
-#### Event-Driven Architecture
+- DevOps is not a job title or a tool, it is a **culture**.
+- **Shared Responsibility:** Devs need to care about how their code runs on the server, and Ops needs to understand the flow of the code.
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+### Lessons Learned
 
-#### Compute Evolution
+#### Design & Operations Mindset
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
-
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
-
-### Key Takeaways
-
-#### Design Mindset
-
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+- **Proactive instead of Reactive:** Always prepare for the worst-case scenario (Disaster Recovery).
+- **Automation-first:** Any task repeated more than twice must be automated.
+- **Immutable Infrastructure:** The immutable infrastructure mindset – instead of modifying the server directly (SSH-ing to fix configs), update the IaC code and deploy a new server.
 
 #### Technical Architecture
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+- **CI/CD Pipelines:** Understanding the clear steps to build a standard pipeline from Source Code → Build → Test → Deploy.
+- The importance of clearly **separating environments** (Dev, Staging, Production) to isolate risks.
+- Understanding how configuration and infrastructure management tools work to ensure consistency across environments.
 
-#### Modernization Strategy
+#### Implementation Strategy
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+- **Start small:** No need to adopt DevOps comprehensively all at once. Start by automating testing, then building, and finally deployment.
+- Build a **Post-mortem culture**: When a disaster occurs, focus on finding the Root Cause instead of pointing fingers (Blameless culture).
 
-### Applying to Work
+### Application to Career Orientation
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+- **Building CI/CD:** Apply automated pipeline setups for personal Fullstack projects to prepare for becoming a true Fullstack Engineer, fully understanding the product lifecycle from code to deployment.
+- **Applying IaC on AWS:** Instead of manually creating VPCs, EC2s, or configuring networks on the AWS Console, transition to writing automation scripts using CloudFormation or Terraform.
+- **Optimizing monitoring systems:** Integrate systems like Nagios or AWS CloudWatch for Linux servers (especially CentOS) to track network metrics and receive early warnings before disasters strike.
+- **Professional systems administration:** Limit the habit of directly SSH-ing into servers for hotfixes; instead, manage configurations centrally via Git.
 
-### Event Experience
+### Experience at the Event
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+Attending the event **“THE HIDDEN ICEBERG OF A PROJECT: DEVOPS BEFORE DISASTER”** was a practical and eye-opening experience, helping me rethink how tech projects are operated. Some standout experiences included:
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+#### Lessons from Real "Disasters"
+- The speakers dissected real-world case studies of projects crashing due to ignoring the "submerged part of the iceberg." This helped me realize the unpredictable consequences of manual work and lacking a system testing process.
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+#### Practical Technical Approach
+- Got introduced to the real-world workflow of CI/CD pipelines and how DevOps engineers automate infrastructure. 
+- Gained a deeper understanding of the importance of building proactive monitoring systems (observability) to "see through" the hidden parts of a project, rather than just configuring a server to run and leaving it at that.
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+#### Team Culture Mindset
+- Realized that the biggest barrier in tech projects is not technology, but the lack of communication between the Dev and Ops teams. The workshop emphasized the culture of shared responsibility, a crucial mindset for future system/Fullstack engineering orientations.
 
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+#### Key Takeaways
+- Adopting a DevOps culture early will help control risks, minimize downtime, and avoid nasty surprises later on. 
+- Automating and monitoring network/server systems right from the start is the most profitable investment in terms of time and stability for any project.
 
 #### Some event photos
-*Add your event photos here*  
+  (/images/event.jpg)
+  (/images/enven2.jpg)
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+
+
