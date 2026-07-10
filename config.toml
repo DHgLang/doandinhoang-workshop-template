@@ -19,7 +19,7 @@ home = [ "HTML", "RSS", "JSON"]
   author = "thienlh@thienlu.com"
   showVisitedLinks = true
   disableBreadcrumb = false
-  disableNextPrev = false
+  disableNextPrev = true
   
 [Languages]
 [Languages.en]
