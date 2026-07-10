@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Throughout my internship at **Bootcamp First Cloud AI Journey** from **May 11, 2026** to **August 11, 2026**, I had the opportunity to learn, develop, and apply the knowledge acquired during my university studies in a real-world working environment.
+Throughout my internship at **Bootcamp First Cloud AI Journey** from **17/04/2026** to **30/07/2026**, I had the opportunity to learn, develop, and apply the knowledge acquired during my university studies in a real-world working environment.
 
 During the internship, I participated in **project development, technical workshops, research activities, and self-directed learning**, which significantly improved my skills in **programming, system analysis, technical documentation, communication, teamwork, and problem-solving**.
 
