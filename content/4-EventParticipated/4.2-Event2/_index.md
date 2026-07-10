@@ -92,9 +92,3 @@ Attending the event **“THE HIDDEN ICEBERG OF A PROJECT: DEVOPS BEFORE DISASTER
 - Adopting a DevOps culture early will help control risks, minimize downtime, and avoid nasty surprises later on. 
 - Automating and monitoring network/server systems right from the start is the most profitable investment in terms of time and stability for any project.
 
-#### Some event photos
-  (/images/event.jpg)
-  (/images/enven2.jpg)
-
-
-

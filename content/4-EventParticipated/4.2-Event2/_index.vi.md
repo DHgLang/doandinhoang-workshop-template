@@ -91,8 +91,3 @@ Tham gia sự kiện **“THE HIDDEN ICEBERG OF A PROJECT: DEVOPS BEFORE DISASTE
 #### Kết luận rút ra
 - Áp dụng văn hóa DevOps sớm sẽ giúp kiểm soát rủi ro, giảm thiểu downtime và tránh tình trạng "cháy nhà mới ra mặt chuột". 
 - Tự động hóa và giám sát hệ thống mạng/máy chủ ngay từ đầu là khoản đầu tư sinh lời nhất về mặt thời gian và sự ổn định của bất kỳ dự án nào.
-
-#### Một số hình ảnh khi tham gia sự kiện
-*  (/images/event.jpg)
-  (/images/enven2.jpg)
-> 

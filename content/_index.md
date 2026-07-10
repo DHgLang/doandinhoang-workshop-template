@@ -29,7 +29,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 11/05/2026 to 11/08/2026
 
-![Your profile picture](/images/doandinhhoang.png)
+![Doan Dinh Hoang](/images/doandinhhoang.png)
 
 ### Report Content
 
