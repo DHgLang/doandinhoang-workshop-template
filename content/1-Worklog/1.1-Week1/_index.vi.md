@@ -1,6 +1,6 @@
 ---
 title: "Worklog Tuần 1"
-date: 2026-05-11
+date: 2026-04-17
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
@@ -17,7 +17,7 @@ pre: " <b> 1.1. </b> "
 
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | :--- | :--- | :--- | :--- | :--- |
-| 2 | - Làm quen với team và mentor tại AWS Việt Nam.<br>- Đọc và lưu ý các nội quy, tiêu chuẩn bảo mật nội bộ. | 11/05/2026 | 11/05/2026 | Hướng dẫn onboarding FCAJ / mentor |
+| 2 | - Làm quen với team và mentor tại AWS Việt Nam.<br>- Đọc và lưu ý các nội quy, tiêu chuẩn bảo mật nội bộ. | 17/04/2026 | 17/04/2026 | Hướng dẫn onboarding FCAJ / mentor |
 | 3 | - Tìm hiểu hệ sinh thái AWS.<br>- Thiết lập AWS account.<br>- Làm quen AWS Management Console. | 12/05/2026 | 12/05/2026 | Tài liệu AWS dành cho người mới bắt đầu |
 | 4 | - **Thực hành CLI:**<br>&emsp; + Cài đặt AWS CLI.<br>&emsp; + Cấu hình Access/Secret Key, Region.<br>&emsp; + Kiểm tra thông tin tài khoản bằng CLI. | 13/05/2026 | 13/05/2026 | Hướng dẫn AWS CLI |
 | 5 | - Tìm hiểu AWS IAM:<br>&emsp; + Users, Groups, Roles.<br>&emsp; + IAM Policies & JSON format.<br>&emsp; + Nguyên tắc Least Privilege. | 14/05/2026 | 14/05/2026 | Tài liệu AWS IAM |

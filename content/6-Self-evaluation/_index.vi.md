@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Trong suốt thời gian thực tập tại **Bootcamp First Cloud AI Journey** từ **11/05/2026** đến **11/08/2026**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.
+Trong suốt thời gian thực tập tại **Bootcamp First Cloud AI Journey** từ **17/04/2026** đến **30/07/2026**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.
 
 Tôi đã tham gia **xây dựng dự án, tham dự hội thảo, nghiên cứu và học hỏi**, qua đó cải thiện kỹ năng **lập trình, phân tích, viết báo cáo, giao tiếp và làm việc nhóm**.
 

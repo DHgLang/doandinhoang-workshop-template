@@ -1,6 +1,6 @@
 ---
 title: "Week 12 Worklog"
-date: 2026-05-11
+date: 2026-04-17
 weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
@@ -20,7 +20,7 @@ pre: " <b> 1.12. </b> "
 | 3 | - Finish Frontend & Hosting and Demo (customer + Admin flows)<br>- Attach live-app, VNPay, RUM, and WAF screenshots | 29/07/2026 | 30/07/2026 | Live app + Amplify Console |
 | 4 | - Write Cleanup (sandbox delete) and Overview & Cost (Billing)<br>- Align Worklog weeks 8–12 and Proposal with DynamoDB / Amplify stack | 31/07/2026 | 03/08/2026 | AWS Billing + Hugo report |
 | 5 | - Prepare final presentation slides on architecture and demo<br>- Review Events / Self-Assessment / Feedback | 04/08/2026 | 07/08/2026 | Personal notes |
-| 6 | - Demo with Mentor; defend the report<br>- Run `npx ampx sandbox delete`; verify CloudFormation / DynamoDB<br>- Check AWS Billing; end the internship | 10/08/2026 | 11/08/2026 | Cleanup checklist |
+| 6 | - Demo with Mentor; defend the report<br>- Run `npx ampx sandbox delete`; verify CloudFormation / DynamoDB<br>- Check AWS Billing; end the internship | 29/07/2026 | 30/07/2026 | Cleanup checklist |
 
 ### Week 12 Achievements
 

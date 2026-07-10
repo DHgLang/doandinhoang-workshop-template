@@ -1,6 +1,6 @@
 ---
 title: "Worklog Tuần 12"
-date: 2026-05-11
+date: 2026-04-17
 weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
@@ -20,7 +20,7 @@ pre: " <b> 1.12. </b> "
 | 3 | - Hoàn thiện mục Frontend & Hosting, Demo luồng khách hàng / Admin<br>- Gắn ảnh live app, VNPay, RUM, WAF | 29/07/2026 | 30/07/2026 | App live + Amplify Console |
 | 4 | - Viết mục Dọn dẹp (sandbox delete) và Tổng quan & chi phí (Billing)<br>- Cập nhật Worklog tuần 8–12, Proposal cho khớp stack DynamoDB / Amplify | 31/07/2026 | 03/08/2026 | AWS Billing + báo cáo Hugo |
 | 5 | - Soạn slide thuyết trình tổng kết kiến trúc và demo<br>- Rà soát Event / Self-Assessment / Feedback | 04/08/2026 | 07/08/2026 | Tài liệu cá nhân |
-| 6 | - Demo với Mentor; bảo vệ báo cáo<br>- Chạy `npx ampx sandbox delete`; xác nhận CloudFormation / DynamoDB<br>- Kiểm tra AWS Billing; kết thúc kỳ thực tập | 10/08/2026 | 11/08/2026 | Cleanup checklist |
+| 6 | - Demo với Mentor; bảo vệ báo cáo<br>- Chạy `npx ampx sandbox delete`; xác nhận CloudFormation / DynamoDB<br>- Kiểm tra AWS Billing; kết thúc kỳ thực tập | 29/07/2026 | 30/07/2026 | Cleanup checklist |
 
 ### Kết quả đạt được tuần 12:
 
