@@ -1,6 +1,6 @@
 ---
 title: "Internship Report"
-date: 2026-04-17
+date: 2026-05-05
 weight: 1
 chapter: false
 ---
@@ -27,7 +27,7 @@ chapter: false
 
 &emsp; **Internship Position:** Workforce Bootcamp - First Cloud AI Journey
 
-&emsp; **Internship Duration:** From 17/04/2026 to 30/07/2026
+&emsp; **Internship Duration:** From 05/05/2026 to 30/07/2026
 
 ![Doan Dinh Hoang](/images/doandinhhoang.png)
 

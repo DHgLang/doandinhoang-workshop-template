@@ -1,6 +1,6 @@
 ---
 title: "Week 1 Worklog"
-date: 2026-04-17
+date: 2026-05-05
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
@@ -17,7 +17,7 @@ pre: " <b> 1.1. </b> "
 
 | Day | Tasks | Start Date | Completion Date | Reference Material |
 | :--- | :--- | :--- | :--- | :--- |
-| Mon | - Familiarize with the team and mentors at AWS Vietnam.<br>- Read and note internal regulations and security standards. | 17/04/2026 | 17/04/2026 | FCAJ onboarding / mentor guidelines |
+| Mon | - Familiarize with the team and mentors at AWS Vietnam.<br>- Read and note internal regulations and security standards. | 05/05/2026 | 05/05/2026 | FCAJ onboarding / mentor guidelines |
 | Tue | - Explore the AWS ecosystem.<br>- Set up an AWS account.<br>- Get familiar with the AWS Management Console. | 12/05/2026 | 12/05/2026 | AWS getting-started guides |
 | Wed | - **CLI Practice:**<br>&emsp; + Install AWS CLI.<br>&emsp; + Configure Access/Secret Key and Region.<br>&emsp; + Check account information via CLI. | 13/05/2026 | 13/05/2026 | AWS CLI user guide |
 | Thu | - Explore AWS IAM:<br>&emsp; + Users, Groups, Roles.<br>&emsp; + IAM Policies & JSON format.<br>&emsp; + Principle of Least Privilege. | 14/05/2026 | 14/05/2026 | AWS IAM documentation |

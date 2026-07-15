@@ -1,12 +1,12 @@
 ---
 title: "Nhật ký công việc"
-date: 2026-04-17
+date: 2026-05-05
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-Chương trình thực tập này được thực hiện trong **12 tuần** (17/04/2026 — 30/07/2026), chia thành 2 giai đoạn:
+Chương trình thực tập này được thực hiện trong **12 tuần** (05/05/2026 — 30/07/2026), chia thành 2 giai đoạn:
 
 - **Tuần 1–7:** Hoàn thành các lab AWS nền tảng về IAM, S3, EC2, EFS, VPC, định tuyến, Linux và giám sát.
 - **Tuần 8–12:** Thực hiện dự án **Movie Ticket Booking Platform** trên AWS Serverless (Amplify Gen 2, Cognito, API Gateway, Lambda, DynamoDB, SQS, VNPay, Amplify Hosting, WAF, CloudWatch RUM) và hoàn thiện báo cáo workshop.

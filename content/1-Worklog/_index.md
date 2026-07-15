@@ -1,12 +1,12 @@
 ---
 title: "Worklog"
-date: 2026-04-17
+date: 2026-05-05
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-This internship was completed over **12 weeks** (17/04/2026 — 30/07/2026) and includes two phases:
+This internship was completed over **12 weeks** (05/05/2026 — 30/07/2026) and includes two phases:
 
 - **Weeks 1–7:** Foundation AWS labs covering IAM, S3, EC2, EFS, VPC, routing, Linux, and monitoring.
 - **Weeks 8–12:** Graduation project **Movie Ticket Booking Platform** on AWS Serverless (Amplify Gen 2, Cognito, API Gateway, Lambda, DynamoDB, SQS, VNPay, Amplify Hosting, WAF, CloudWatch RUM) and the workshop report.
