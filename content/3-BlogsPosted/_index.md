@@ -8,8 +8,8 @@ pre: " <b> 3. </b> "
 
 
 
-### 1. [Blog 1 - SOLVING OVERLOAD ISSUES IN MOVIE TICKET BOOKING PLATFORMS WITH AWS SERVERLESS](3.1-Blog1/)
-This blog introduces the successful application of an Event-Driven Serverless architecture, combined with Amazon SQS and ElastiCache (Redis), to comprehensively resolve bottleneck issues and race conditions (double-booking). This is the core solution that allows the system to automatically and flexibly scale, handling thousands of concurrent requests during blockbuster movie releases while optimizing infrastructure costs.
+### 1. [Blog 1 - Why Amazon Bedrock AgentCore Chose Cedar to Control AI Agent Permissions](3.1-Blog1/)
+This post shares key takeaways from AWS on Cedar in Amazon Bedrock AgentCore: mapping Principal/Action/Resource/Context to the Gateway, Default Deny for tool calls, Tool Filtering via partial evaluation, and why a Policy Engine should stay separate from agent capability — alongside IAM, Guardrails, logging, and human-in-the-loop.
 
 ### 2. [Blog 2 - OPTIMIZING PERFORMANCE AND COMPREHENSIVE SECURITY FOR TICKET BOOKING SYSTEMS WITH AWS](3.2-Blog2/)
 This blog dives into the multi-layered security strategy and system response speed optimization. By leveraging content delivery networks (CloudFront, S3), combined with identity management via Cognito and completely isolating the core infrastructure (RDS, Redis) inside a Private VPC, the platform ensures a seamless experience and absolute safety for customers' transaction data.
