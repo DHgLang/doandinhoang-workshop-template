@@ -21,11 +21,11 @@ disableToc: true
 
 ## 1. Purpose of the Event
 
-The event was organized as an academic knowledge-sharing activity for **First Cloud AI Journey (FCJ)** students. Its purpose was to strengthen understanding of Cloud Computing, AWS services, security, AI, and career paths through practical technical talks delivered by peers in the program.
+The Mini Meetup served as an academic forum for **First Cloud AI Journey (FCJ)** students to reinforce Cloud Computing, AWS services, security, AI, and career direction through hands-on technical talks from speakers and peers in the program.
 
-It also created space for live Q&A, peer exchange, and connecting Cloud Journey coursework with each student’s internship project — instead of learning only from documentation.
+The offline format also created space for networking, live Q&A, and learning deployment experience from mentors and presenters. This helped connect Cloud Journey coursework with each student’s internship project, rather than studying theory from documentation alone.
 
-The offline format encouraged self-learning, technical discussion, and openly sharing what interns had built during the program, helping strengthen the FCJ learning community.
+Meeting in person encouraged self-learning, technical discussion, and openly sharing what interns had built — strengthening the FCJ learning community.
 
 ---
 
@@ -35,7 +35,7 @@ The event involved:
 
 - The organizing team of **The First Cloud Journey – AWS Vietnam**, responsible for schedule, venue, and session coordination.
 - Mentors and trainers from the AWS / FCJ program, supporting content direction and technical feedback when needed.
-- Student speakers who prepared slides, demos, and presented topics researched during the internship.
+- Speakers were senior peers and fellow students presenting topics they researched and cared about during the internship.
 - Attendees from the cohort who listened, took notes, and joined discussions after each talk.
 
 This mix of organizers, mentors, and students kept the meetup both academic and grounded in real learning experiences.
@@ -63,7 +63,7 @@ Through the event, I reviewed and strengthened:
 - AWS / Cloud knowledge from the FCJ program, especially security, serverless, and AI-related services.
 - How Docker, WAF, API Gateway WebSocket, Lambda, DynamoDB, and GraphRAG apply to real problems — not only service names.
 - Best practices for edge security, serverless state (stateless Lambda + database), and CloudWatch-based observability.
-- Structured note-taking and immediate mapping of talks to **Movie Ticket Booking Platform**.
+- Practiced technical listening and structured note-taking.
 - Awareness of Cloud/DevOps career progression: operations fundamentals, continuous self-learning, and hands-on labs.
 
 These takeaways helped me identify personal knowledge gaps and prioritize deeper study after the meetup.
@@ -80,7 +80,7 @@ Knowledge from the meetup applies directly to the internship project and future 
 - **GraphRAG / AI:** a future path after core booking (recommendations, support chatbot) using Bedrock + knowledge graphs instead of plain-text RAG.
 - **Operations mindset (Vinh Tran):** automate, monitor, document — useful when keeping/deleting sandboxes, checking Billing, and avoiding uncontrolled hotfixes on AWS.
 
-Overall, the meetup shifted my focus from “make it run” to “make it secure, observable, and operable.”
+Overall, the meetup shifted my focus from “make it run” to “make it secure, observable, operable, and scalable.”
 
 ---
 

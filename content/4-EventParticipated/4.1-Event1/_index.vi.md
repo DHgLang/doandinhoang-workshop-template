@@ -21,11 +21,11 @@ disableToc: true
 
 ## 1. Mục đích của sự kiện
 
-Sự kiện được tổ chức nhằm tạo sân chơi học thuật dành cho học viên chương trình **First Cloud AI Journey (FCJ)**, giúp củng cố kiến thức về điện toán đám mây, các dịch vụ AWS, bảo mật, AI và lộ trình nghề nghiệp thông qua các bài chia sẻ kỹ thuật thực chiến từ chính các bạn trong chương trình.
+Sự kiện được tổ chức nhằm tạo sân chơi học thuật dành cho học viên chương trình First Cloud AI Journey (FCJ), giúp củng cố kiến thức về điện toán đám mây, các dịch vụ AWS, bảo mật, AI và lộ trình nghề nghiệp thông qua các bài chia sẻ kỹ thuật thực chiến từ các anh, các bạn tham gia chương trình.
 
-Bên cạnh đó, chương trình tạo điều kiện để học viên giao lưu, đặt câu hỏi trực tiếp, học hỏi kinh nghiệm triển khai từ đồng đội và mentor. Đây cũng là cơ hội để gắn kiến thức trên Cloud Journey với dự án thực tập cá nhân, thay vì chỉ học lý thuyết trên tài liệu.
+Bên cạnh đó, chương trình tạo điều kiện để giao lưu, đặt câu hỏi trực tiếp, học hỏi kinh nghiệm triển khai từ speaker và mentor. Đây cũng là cơ hội để gắn kiến thức trên Cloud Journey với dự án thực tập cá nhân, thay vì chỉ học lý thuyết trên tài liệu.
 
-Không khí offline khuyến khích tinh thần tự học, phản biện kỹ thuật và chia sẻ công khai những gì đã làm được trong thời gian thực tập — góp phần xây dựng cộng đồng học tập gắn kết hơn trong FCJ.
+Không khí offline khuyến khích tinh thần tự học, phản biện kỹ thuật, giúp định hướng và chia sẻ công khai những gì đã làm được trong thời gian thực tập — góp phần xây dựng cộng đồng học tập gắn kết hơn trong FCJ.
 
 ---
 
@@ -35,7 +35,7 @@ Chương trình có sự tham gia của:
 
 - Ban tổ chức chương trình **The First Cloud Journey – AWS Việt Nam**, phụ trách lịch trình, địa điểm và điều phối buổi chia sẻ.
 - Các Mentor và Trainer của chương trình AWS / FCJ, hỗ trợ định hướng nội dung và góp ý kỹ thuật khi cần.
-- Các diễn giả là học viên đã chuẩn bị slide, demo và trình bày chủ đề mình nghiên cứu trong quá trình thực tập.
+- Diễn giả là các anh, chị đi trước và các bạn trình bày chủ đề mình nghiên cứu, tâm đắc trong quá trình thực tập.
 - Người tham dự là học viên trong chương trình, lắng nghe, ghi chép và trao đổi sau mỗi bài.
 
 Sự kết hợp giữa ban tổ chức, mentor và học viên giúp buổi meetup vừa mang tính học thuật, vừa gần với trải nghiệm thực tế của người đang học Cloud.
@@ -46,11 +46,11 @@ Sự kết hợp giữa ban tổ chức, mentor và học viên giúp buổi mee
 
 Điểm nhấn của chương trình là chuỗi bài chia sẻ kỹ thuật offline. Các chủ đề chính gồm:
 
-- **Docker (Bảo Huỳnh)** — so sánh virtualization và containerization; giải thích image, container, layer cache; nêu lợi ích portability và use case CI/CD, microservices, modernize legacy. Em hiểu rõ hơn vì sao container phù hợp môi trường cloud-native.
+- **Docker (anh Bảo Huỳnh)** — so sánh virtualization và containerization; giải thích image, container, layer cache; nêu lợi ích portability và use case CI/CD, microservices, modernize legacy. Em hiểu rõ hơn vì sao container phù hợp môi trường cloud-native.
 - **AWS WAF + Machine Learning (Lê Hoàng Gia Đại)** — Web ACL, Managed Rules, rate limiting; hạn chế của rule-based trước zero-day; pipeline ML (dataset CSE-CIC-IDS2018, LightGBM) kết hợp log WAF và cảnh báo. Kiến trúc đề cập VPC, ALB, S3, Lambda, GuardDuty, CloudWatch, SNS.
 - **Multiplayer Godot với AWS WebSocket (Nguyễn Quốc Bảo)** — chọn WebSocket cho turn-based/lobby; Lambda xử lý CONNECT / DISCONNECT / MESSAGE; lưu state trên DynamoDB; bài học về stale connection và chi phí Scan. Hướng mở rộng GameLift cho game realtime cao tần.
 - **GraphRAG với Amazon Bedrock & Neptune (Việt Phát)** — giới hạn RAG text thuần với câu hỏi multi-hop; GraphRAG lưu quan hệ qua edges; Bedrock Knowledge Bases + Neptune Analytics hoặc pipeline LlamaIndex tùy chỉnh.
-- **Lộ trình Helpdesk → Sysadmin → Cloud/DevOps (Trần Trung Vinh)** — kỹ năng nền từ support, tự học Linux/networking, automate và monitor; chuyển mindset on-prem sang AWS, IaC, CI/CD; nhấn mạnh portfolio thực tế hơn chứng chỉ đơn thuần.
+- **Lộ trình Helpdesk → Sysadmin → Cloud/DevOps (anh Trần Trung Vinh)** — kỹ năng nền từ support, tự học Linux/networking, automate và monitor; chuyển mindset on-prem sang AWS, IaC, CI/CD; nhấn mạnh portfolio thực tế hơn chứng chỉ đơn thuần.
 
 Không khí buổi chia sẻ sôi nổi: có demo trực tiếp, hỏi đáp sau mỗi bài, trao đổi trade-off thực tế về cost, latency và bảo mật. Em thấy rõ mức độ chuẩn bị của từng diễn giả và cách họ trình bày bài toán end-to-end.
 
@@ -63,7 +63,7 @@ Thông qua sự kiện, em đã học và củng cố được nhiều kiến th
 - Ôn tập và mở rộng kiến thức AWS / Cloud đã học trong chương trình FCJ, đặc biệt các dịch vụ gắn với bảo mật, serverless và AI.
 - Hiểu rõ hơn cách áp dụng Docker, WAF, API Gateway WebSocket, Lambda, DynamoDB và GraphRAG vào bài toán thực tế thay vì chỉ nhớ tên dịch vụ.
 - Tiếp cận Best Practices về bảo mật edge, quản lý state serverless (stateless Lambda + DB), và observability bằng CloudWatch / cảnh báo.
-- Rèn luyện khả năng lắng nghe kỹ thuật, ghi chép có cấu trúc và liên hệ ngay với dự án **Movie Ticket Booking Platform**.
+- Rèn luyện khả năng lắng nghe kỹ thuật và ghi chép có cấu trúc.
 - Nâng cao nhận thức về lộ trình nghề Cloud/DevOps: nền tảng vận hành hệ thống, tự học liên tục và thực hành lab là then chốt.
 
 Những nội dung này giúp em nhìn lại khoảng trống kiến thức của bản thân và ưu tiên học sâu hơn các phần còn yếu sau meetup.
@@ -80,7 +80,7 @@ Những kiến thức thu nhận được có thể áp dụng trực tiếp và
 - **GraphRAG / AI:** định hướng mở rộng sau khi hoàn thiện core booking (gợi ý phim, chatbot hỗ trợ) bằng Bedrock + knowledge graph thay vì RAG text thuần.
 - **Tư duy vận hành (Vinh Trần):** automate, monitor, document — áp dụng khi giữ/xóa sandbox, kiểm tra Billing, tránh thao tác nóng thiếu kiểm soát trên AWS.
 
-Nhìn chung, meetup giúp em chuyển từ “làm cho chạy” sang “làm cho an toàn, quan sát được và dễ vận hành”.
+Nhìn chung, meetup giúp em chuyển từ “làm cho chạy” sang “làm cho an toàn, quan sát được, dễ vận hành và mở rộng”.
 
 ---
 

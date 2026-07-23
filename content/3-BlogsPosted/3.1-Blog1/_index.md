@@ -90,7 +90,15 @@ Still, a Policy Engine is not the only safeguard. A secure Agent system should a
 
 In short: **Policy decides what an Agent is allowed to do; Guardrails help shape how the Agent should respond.** These layers complement each other — they do not replace each other.
 
-## References
+---
+
+## 5. Architecture
+
+<img src="/images/3-BlogsPosted/3.1-Blog1/ArchitectureBlog1.png" alt="Architecture Diagram" style="max-width:70%;height:auto;" />
+
+## 6. References
 
 - [Why Policy in Amazon Bedrock AgentCore chose Cedar for securing agentic workflows](https://aws.amazon.com/blogs/security/why-policy-in-amazon-bedrock-agentcore-chose-cedar-for-securing-agentic-workflows/)
 - [Amazon Bedrock AgentCore Policy](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html)
+
+<img src="/images/3-BlogsPosted/3.1-Blog1/Blog1.png" alt="Blog1 Facebook post" style="max-width:42%;height:auto;" />
